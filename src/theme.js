@@ -126,41 +126,39 @@ export const themeSettings = (mode) => {
   return {
     palette: {
       mode: mode,
-      ...colors(
-        mode === 'dark'
-          ? {
-              primary: {
-                main: colors.primary[500],
-              },
-              secondary: {
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                main: colors.gray[500],
-                dark: colors.gray[700],
-                light: colors.gray[100],
-              },
-              background: {
-                default: colors.primary[500],
-              },
-            }
-          : {
-              primary: {
-                main: colors.primary[100],
-              },
-              secondary: {
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                main: colors.gray[500],
-                dark: colors.gray[700],
-                light: colors.gray[100],
-              },
-              background: {
-                default: '#fcfcfc',
-              },
-            }
-      ),
+      ...(mode === 'dark'
+        ? {
+            primary: {
+              main: colors.primary[500],
+            },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              main: colors.gray[500],
+              dark: colors.gray[700],
+              light: colors.gray[100],
+            },
+            background: {
+              default: colors.primary[500],
+            },
+          }
+        : {
+            primary: {
+              main: colors.primary[100],
+            },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              main: colors.gray[500],
+              dark: colors.gray[700],
+              light: colors.gray[100],
+            },
+            background: {
+              default: '#fcfcfc',
+            },
+          }),
     },
     typography: {
       fontFamily: ['Source Sans 3', 'sans-serif'].join(','),
